@@ -1,7 +1,7 @@
 export enum StatusEnum {
   Doing = "doing",
   Done = "done",
-  Waiting = "Waiting"
+  Waiting = "waiting"
 }
 
 export enum FilterEnum {

@@ -4,7 +4,7 @@ import { makeStyles, Theme, createStyles } from "@material-ui/core/styles"
 import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core"
 import s from "../../Todo/Filter/Filter.module.scss"
 import { useDispatch } from "react-redux"
-import { actions, editStatus } from "../../../redux/todo-reducer"
+import { actions } from "../../../redux/todo-reducer"
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     button: {
@@ -18,10 +18,11 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 interface ICustomSelectProps {
-    id: string
+    id: string,
+    value: string;
 }
 
-export const CustomSelect: React.FC<ICustomSelectProps> = ({id}) => {
+export const CustomSelect: React.FC<ICustomSelectProps> = ({id, value}) => {
   const classes = useStyles()
   const dispatch = useDispatch()
 
@@ -38,6 +39,7 @@ export const CustomSelect: React.FC<ICustomSelectProps> = ({id}) => {
           <Select
             labelId="demo-controlled-open-select-label"
             id="demo-controlled-open-select"
+            value={value}
             onChange={(e) => handleChange(e)}
           >
             <MenuItem value={StatusEnum.Waiting}>

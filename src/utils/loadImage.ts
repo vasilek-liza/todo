@@ -1,5 +1,3 @@
-// import { showAlert } from './showAlert'
-
 export const loadImage = (file: File, fieldName: string, holderId: string, setFiledValue: (field: string, value: any, shouldValidate?: boolean | undefined) => void) => {
 	let fileReader = new FileReader()
 		

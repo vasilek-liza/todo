@@ -13,8 +13,7 @@ import DeleteIcon from "@material-ui/icons/Delete"
 import ListIcon from "@material-ui/icons/List"
 import DoneIcon from "@material-ui/icons/Done"
 import DoneAllIcon from "@material-ui/icons/DoneAll"
-import { todoAPI } from "../../../api/todo-api"
-import { ITask, StatusEnum } from "../../../interface/todo"
+import { StatusEnum } from "../../../interface/todo"
 
 export const List = memo(() => {
   const dispatch = useDispatch()

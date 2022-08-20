@@ -83,6 +83,7 @@ export const todoReducer = (
           task,
           ...state.tasks.slice(taskId + 1),
         ],
+        details: {...task}
       }
     case "TODO/LOADING_TRUE":
       return {
@@ -193,11 +194,11 @@ export const editTask = (data: ITask, id: string): TThunk => async (
   }
 }
 
-export const editStatus = (value: StatusEnum, id: string): TThunk => async (dispatch, getState) => {
-  const task: ITask | undefined = getState().todo.tasks.find((task) => task.id === id)
-  todoAPI.changeStatusTask(value, id)
-  dispatch(actions.setStatusTask(value,id))
-}
+// export const editStatus = (value: StatusEnum, id: string): TThunk => async (dispatch, getState) => {
+//   const task: ITask | undefined = getState().todo.tasks.find((task) => task.id === id)
+//   await todoAPI.changeStatusTask(value, id)
+//   dispatch(actions.setStatusTask(value,id))
+// }
 
 export const deleteTask = (id: string): TThunk => async (dispatch) => {
   try {

@@ -91,7 +91,7 @@ export const Modal = memo<IProps>(({ initial, actionFunc, id, infoAboutPage }) =
                   Component={Textarea}
                   autoComplete="off"
                 />
-                { id ? (<CustomSelect id={id}/>) : ""}
+                {id && (<CustomSelect id={id} value={initialValues.status} />)}
 
                 <CustomButton
                   type="submit"

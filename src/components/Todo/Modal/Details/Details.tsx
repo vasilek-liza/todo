@@ -3,11 +3,9 @@ import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 import { todoSelectors } from "../../../../redux/selectors/selectors"
 import { editTask, getTask, getTasks } from "../../../../redux/todo-reducer"
-import { actions } from "../../../../redux/todo-reducer"
 import Axios from "axios"
 import { Modal } from "../Modal"
-import { ITask, StatusEnum } from "../../../../interface/todo"
-import { editStatus } from "../../../../redux/todo-reducer"
+import { ITask } from "../../../../interface/todo"
 
 interface IParams {
   id: string
@@ -17,10 +15,8 @@ export const Details = () => {
   const params: IParams = useParams()
   const dispatch = useDispatch()
 
-  const loading = useSelector(todoSelectors.getLoading)
   const task = useSelector(todoSelectors.getTask)
   const tasks = useSelector(todoSelectors.getTasks)
-
   const infoAboutPage = {
     title: "Подробная информация/Изменить задачу",
     btn: "Сохранить измененя",
@@ -52,7 +48,7 @@ export const Details = () => {
       initial={task}
       actionFunc={(data: ITask): void => {
         dispatch(editTask(data, params.id))
-        dispatch(editStatus(data.status, params.id))
+        
       }}
       infoAboutPage={infoAboutPage}
       id={params.id}

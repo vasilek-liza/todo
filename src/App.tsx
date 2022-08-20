@@ -6,7 +6,6 @@ import { withSuspense } from "./hoc/withSuspense"
 import { todoSelectors } from "./redux/selectors/selectors"
 import { Loader } from "./components/Common/Loader/Loader"
 import { useSelector } from "react-redux"
-import { todoAPI } from "./api/todo-api"
 
 const Todo = React.lazy(() => import("./components/Todo/TodoContainer"))
 

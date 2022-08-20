@@ -1,6 +1,5 @@
-import { ContactSupportOutlined } from "@material-ui/icons"
 import { AxiosResponse, CancelToken } from "axios"
-import { ITask, StatusEnum } from "../interface/todo"
+import { ITask} from "../interface/todo"
 import { handleErr, instance } from "./api"
 
 export const todoAPI = {

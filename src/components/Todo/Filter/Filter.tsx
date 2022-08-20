@@ -1,5 +1,4 @@
 import React from "react"
-import { StatusEnum } from "../../../interface/todo"
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles"
 import { Popup } from "../../Common/Popup/Popup"
 import { FormControl, InputLabel, MenuItem, Select } from "@material-ui/core"
